@@ -1,0 +1,11 @@
+cyberquest\User\User.class
+cyberquest\User\UserRepository.class
+cyberquest\config\SecurityConfig.class
+cyberquest\User\UserController.class
+cyberquest\dto\RegisterRequest.class
+cyberquest\Module\Module.class
+main\java\Module\ModuleService.class
+cyberquest\dto\LoginRequest.class
+cyberquest\User\UserService.class
+cyberquest\CyberQuestApplication.class
+main\java\Module\ModuleRepository.class
