@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . .
 
 # Build the app using Maven Wrapper
-RUN ./mvnw clean install
+RUN ./mvnw clean package
 
 # Run the Spring Boot app
 CMD ["java", "-jar", "target/*.jar"]
