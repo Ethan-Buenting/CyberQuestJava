@@ -9,4 +9,4 @@ COPY . .
 RUN ./mvnw clean package
 
 # Run the Spring Boot app
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java", "-jar", "target/CPRE530-0.0.1-SNAPSHOT.jar"]
