@@ -1,7 +1,7 @@
 package cyberquest.User;
 
 import cyberquest.dto.LoginRequest;
-//import io.swagger.v3.oas.annotations.Operation;
+import cyberquest.dto.ModuleRequest;
 import cyberquest.dto.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +14,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/{username}")
+    public User getByUsername(@PathVariable String username) {
+        return userService.findByUsername(username);
+    }
+
 //    @Operation(summary = "register a new user for CyberQuest")
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest registerRequest) {
@@ -25,8 +30,8 @@ public class UserController {
         return userService.login(loginRequest);
     }
 
-    @GetMapping("/{username}")
-    public User getByUsername(@PathVariable String username) {
-        return userService.findByUsername(username);
+    @PutMapping("/module")
+    public ResponseEntity<String> updateModuleCompletion(@RequestBody ModuleRequest moduleRequest) {
+        return userService.updateModuleCompletion(moduleRequest);
     }
 }
