@@ -51,7 +51,7 @@ public class UserService {
             return ResponseEntity.status(401).body("Module number out of range");
         }
         StringBuilder newProgress = new StringBuilder(user.getModuleProgress());
-        newProgress.setCharAt(moduleRequest.getModuleNum(), '1');
+        newProgress.setCharAt(moduleRequest.getModuleNum() - 1, '1');
         user.setModuleProgress(newProgress.toString());
         userRepository.save(user);
         return ResponseEntity.ok("Module Updated Successfully");
